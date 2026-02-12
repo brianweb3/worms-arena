@@ -1,8 +1,8 @@
 // ---------------------------------------------------------------------------
 // worms.arena — Physics: projectile simulation
 // ---------------------------------------------------------------------------
-import { GRAVITY, PHYSICS_DT, MAX_PHYSICS_STEPS, MAP_WIDTH, WATER_LEVEL, WORM_RADIUS, } from './constants.js';
-import { WEAPONS } from './weapons.js';
+import { GRAVITY, PHYSICS_DT, MAX_PHYSICS_STEPS, MAP_WIDTH, WATER_LEVEL, WORM_RADIUS, } from './constants';
+import { WEAPONS } from './weapons';
 /**
  * Simulate a single projectile until it hits terrain, a worm, or leaves the map.
  */

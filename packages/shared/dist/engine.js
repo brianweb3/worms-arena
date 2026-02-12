@@ -1,11 +1,11 @@
 // ---------------------------------------------------------------------------
 // worms.arena — Game Engine
 // ---------------------------------------------------------------------------
-import { MAP_WIDTH, MAP_HEIGHT, WORM_HP, WORM_RADIUS, WORM_MOVE_SPEED, TEAM_SIZE, TEAM_COUNT, WATER_LEVEL, STARTING_WEAPONS, STARTING_HEALTH_KITS, STARTING_SHIELDS, STARTING_SPEED_BOOSTS, MAX_MOVE_DISTANCE_PER_TURN, MOVE_STEP_SIZE, } from './constants.js';
-import { SeededRNG } from './rng.js';
-import { generateTerrain } from './terrain.js';
-import { WEAPONS } from './weapons.js';
-import { simulateProjectile, applyExplosion, applyWormGravity } from './physics.js';
+import { MAP_WIDTH, MAP_HEIGHT, WORM_HP, WORM_RADIUS, WORM_MOVE_SPEED, TEAM_SIZE, TEAM_COUNT, WATER_LEVEL, STARTING_WEAPONS, STARTING_HEALTH_KITS, STARTING_SHIELDS, STARTING_SPEED_BOOSTS, MAX_MOVE_DISTANCE_PER_TURN, MOVE_STEP_SIZE, } from './constants';
+import { SeededRNG } from './rng';
+import { generateTerrain } from './terrain';
+import { WEAPONS } from './weapons';
+import { simulateProjectile, applyExplosion, applyWormGravity } from './physics';
 /** Team colours */
 const TEAM_COLORS = ['#e74c3c', '#3498db', '#2ecc71', '#f1c40f'];
 /** Worm name pools per team */

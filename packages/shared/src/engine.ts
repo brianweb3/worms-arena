@@ -17,7 +17,7 @@ import {
   STARTING_SPEED_BOOSTS,
   MAX_MOVE_DISTANCE_PER_TURN,
   MOVE_STEP_SIZE,
-} from './constants.js';
+} from './constants';
 import type {
   GameState,
   Worm,
@@ -31,11 +31,11 @@ import type {
   ItemType,
   MatchStats,
   WeaponId,
-} from './types.js';
-import { SeededRNG } from './rng.js';
-import { Terrain, generateTerrain } from './terrain.js';
-import { WEAPONS } from './weapons.js';
-import { simulateProjectile, applyExplosion, applyWormGravity } from './physics.js';
+} from './types';
+import { SeededRNG } from './rng';
+import { Terrain, generateTerrain } from './terrain';
+import { WEAPONS } from './weapons';
+import { simulateProjectile, applyExplosion, applyWormGravity } from './physics';
 
 /** Team colours */
 const TEAM_COLORS = ['#e74c3c', '#3498db', '#2ecc71', '#f1c40f'];

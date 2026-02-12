@@ -10,10 +10,10 @@ import {
   MAP_HEIGHT,
   WATER_LEVEL,
   WORM_RADIUS,
-} from './constants.js';
-import { WEAPONS } from './weapons.js';
-import type { Projectile, Explosion, Worm, WeaponId, Wind } from './types.js';
-import { Terrain } from './terrain.js';
+} from './constants';
+import { WEAPONS } from './weapons';
+import type { Projectile, Explosion, Worm, WeaponId, Wind } from './types';
+import { Terrain } from './terrain';
 
 export interface ProjectileResult {
   /** Position frames for animation */

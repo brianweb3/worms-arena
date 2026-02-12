@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // worms.arena — Weapon Definitions
 // ---------------------------------------------------------------------------
-import { WEAPON_BAZOOKA, WEAPON_GRENADE, WEAPON_SHOTGUN } from './constants.js';
+import { WEAPON_BAZOOKA, WEAPON_GRENADE, WEAPON_SHOTGUN } from './constants';
 export const WEAPONS = {
     [WEAPON_BAZOOKA]: {
         id: 'bazooka',

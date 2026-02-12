@@ -1,1 +1,1 @@
-{"version":3,"file":"weapons.d.ts","sourceRoot":"","sources":["../src/weapons.ts"],"names":[],"mappings":"AAKA,OAAO,KAAK,EAAE,SAAS,EAAE,QAAQ,EAAE,MAAM,YAAY,CAAC;AAEtD,eAAO,MAAM,OAAO,EAAE,MAAM,CAAC,QAAQ,EAAE,SAAS,CAkC/C,CAAC;AAEF,eAAO,MAAM,WAAW,EAAE,SAAS,EAA2B,CAAC"}
+{"version":3,"file":"weapons.d.ts","sourceRoot":"","sources":["../src/weapons.ts"],"names":[],"mappings":"AAKA,OAAO,KAAK,EAAE,SAAS,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAEnD,eAAO,MAAM,OAAO,EAAE,MAAM,CAAC,QAAQ,EAAE,SAAS,CAkC/C,CAAC;AAEF,eAAO,MAAM,WAAW,EAAE,SAAS,EAA2B,CAAC"}

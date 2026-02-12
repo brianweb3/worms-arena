@@ -5,7 +5,9 @@
     "rootDir": "./src",
     "composite": true,
     "declaration": true,
-    "declarationMap": true
+    "declarationMap": true,
+    "moduleResolution": "node",
+    "module": "ESNext"
   },
   "include": ["src/**/*"]
 }

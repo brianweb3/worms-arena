@@ -1,4 +1,4 @@
-import { SeededRNG } from './rng.js';
+import { SeededRNG } from './rng';
 /**
  * Pixel-based terrain map.
  * Each byte: 0 = air, 1 = solid ground.
