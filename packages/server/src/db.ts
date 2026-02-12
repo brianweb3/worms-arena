@@ -8,16 +8,23 @@ import { fileURLToPath } from 'url';
 import { PRESET_AGENTS } from './ai/agent.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-// Use persistent storage: Railway provides /data, Vercel uses /tmp, local uses ./data
+// Use persistent storage: 
+// - Custom path via DATA_PATH env var (for Railway volumes or custom paths)
+// - Vercel uses /tmp
+// - Railway without volume uses local data directory (data persists during service lifetime)
+// - Local development uses ./data
 const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV;
 const isRailway = process.env.RAILWAY_ENVIRONMENT !== undefined;
-const DATA_PATH = isVercel
+
+const DATA_PATH = process.env.DATA_PATH
+  ? path.resolve(process.env.DATA_PATH)
+  : isVercel
   ? path.resolve('/tmp', 'worms-arena-store.json')
   : isRailway
-  ? path.resolve('/data', 'worms-arena-store.json')
+  ? path.resolve(__dirname, '..', 'data', 'store.json') // Railway: use local data dir (persists during service lifetime)
   : path.resolve(__dirname, '..', 'data', 'store.json');
 
-console.log(`[db] Using data path: ${DATA_PATH} (Vercel: ${isVercel}, Railway: ${isRailway})`);
+console.log(`[db] Using data path: ${DATA_PATH} (Vercel: ${isVercel}, Railway: ${isRailway}, Custom: ${!!process.env.DATA_PATH})`);
 
 // ---- Types ----
 
