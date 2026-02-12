@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "buildCommand": "npm run build:shared && npm run build --workspace=@worms-arena/client",
+  "buildCommand": "npm run build:client",
   "outputDirectory": "packages/client/dist",
   "installCommand": "npm install",
   "framework": null,
+  "rootDirectory": ".",
   "rewrites": [
     {
       "source": "/api/(.*)",
