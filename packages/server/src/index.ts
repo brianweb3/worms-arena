@@ -43,7 +43,6 @@ if (isProduction) {
     target: `http://localhost:${VITE_PORT}`,
     changeOrigin: true,
     ws: true,
-    logLevel: 'silent',
   });
   
   app.use((req, res, next) => {
