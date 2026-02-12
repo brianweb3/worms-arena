@@ -83,9 +83,16 @@ export class MatchManager {
   async start(): Promise<void> {
     this.running = true;
     console.log(`[match] Starting ${PARALLEL_MATCHES} parallel match slots`);
+    console.log(`[match] Running: ${this.running}, Slots: ${this.slots.length}`);
 
-    const promises = this.slots.map((slot, i) => this.runSlotLoop(slot, i * 1500));
-    await Promise.all(promises);
+    // Start match loops (don't await - let them run in background)
+    this.slots.forEach((slot, i) => {
+      this.runSlotLoop(slot, i * 1500).catch((err) => {
+        console.error(`[match] Slot ${i} crashed:`, err);
+      });
+    });
+    
+    console.log(`[match] All ${PARALLEL_MATCHES} match loops started`);
   }
 
   stop(): void {
@@ -94,6 +101,8 @@ export class MatchManager {
 
   getMatchList(): MatchSummary[] {
     const list: MatchSummary[] = [];
+    const activeSlots = this.slots.filter(s => s.engine && s.agents);
+    console.log(`[match] getMatchList: ${activeSlots.length} active matches out of ${this.slots.length} slots`);
     for (const slot of this.slots) {
       if (slot.engine && slot.agents) {
         const e = slot.engine;

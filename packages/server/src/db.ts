@@ -8,7 +8,13 @@ import { fileURLToPath } from 'url';
 import { PRESET_AGENTS } from './ai/agent.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const DATA_PATH = path.resolve(__dirname, '..', 'data', 'store.json');
+// Use /tmp for Vercel (writable) or local data directory
+const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV;
+const DATA_PATH = isVercel 
+  ? path.resolve('/tmp', 'worms-arena-store.json')
+  : path.resolve(__dirname, '..', 'data', 'store.json');
+
+console.log(`[db] Using data path: ${DATA_PATH} (Vercel: ${isVercel})`);
 
 // ---- Types ----
 
@@ -47,16 +53,23 @@ let store: StoreData = { agents: {}, matches: [] };
 export function initDb(): void {
   const dir = path.dirname(DATA_PATH);
   if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
+    try {
+      fs.mkdirSync(dir, { recursive: true });
+    } catch (err) {
+      console.warn(`[db] Failed to create directory ${dir}:`, err);
+    }
   }
   if (fs.existsSync(DATA_PATH)) {
     try {
       store = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
       console.log(`[db] Loaded ${Object.keys(store.agents).length} agents, ${store.matches.length} matches`);
-    } catch {
-      console.warn('[db] Failed to parse store, starting fresh');
+    } catch (err) {
+      console.warn('[db] Failed to parse store, starting fresh:', err);
       store = { agents: {}, matches: [] };
     }
+  } else {
+    console.log(`[db] No existing store at ${DATA_PATH}, starting fresh`);
+    store = { agents: {}, matches: [] };
   }
 }
 
@@ -95,7 +108,11 @@ export function upsertAgent(agent: {
 }
 
 export function getLeaderboard(): AgentRecord[] {
-  return Object.values(store.agents).sort((a, b) => b.elo - a.elo);
+  const agents = Object.values(store.agents);
+  console.log(`[db] getLeaderboard: ${agents.length} agents in store`);
+  const sorted = agents.sort((a, b) => b.elo - a.elo);
+  console.log(`[db] getLeaderboard: returning ${sorted.length} agents`);
+  return sorted;
 }
 
 export function getAgentRecord(id: string): AgentRecord | undefined {

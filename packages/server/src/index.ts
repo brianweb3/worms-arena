@@ -63,8 +63,10 @@ app.get('/api/health', (_req, res) => {
 app.get('/api/leaderboard', (_req, res) => {
   try {
     const rows = getLeaderboard();
+    console.log(`[api] Leaderboard request: returning ${rows.length} agents`);
     res.json(rows);
-  } catch {
+  } catch (err) {
+    console.error('[api] Leaderboard error:', err);
     res.status(500).json({ error: 'Failed to fetch leaderboard' });
   }
 });
@@ -108,24 +110,39 @@ if (isProduction) {
 
 // ---- Start ----
 
+// Global match manager instance (for Vercel serverless)
+let globalMatchManager: MatchManager | null = null;
+let globalBroadcaster: Broadcaster | null = null;
+
 async function main() {
+  console.log('[server] Environment:', {
+    PORT,
+    VERCEL: process.env.VERCEL,
+    NODE_ENV: process.env.NODE_ENV,
+  });
+  
   console.log('[server] Initializing data store...');
   initDb();
 
   console.log('[server] Starting WebSocket server...');
   const broadcaster = new Broadcaster(server);
+  globalBroadcaster = broadcaster;
 
   console.log('[server] Starting match manager...');
   const matchManager = new MatchManager(broadcaster);
+  globalMatchManager = matchManager;
 
   server.listen(PORT, () => {
     console.log(`[server] worms.arena running on http://localhost:${PORT}`);
   });
 
-  // Start the infinite match loop
+  // Start the infinite match loop (non-blocking)
   matchManager.start().catch((err) => {
     console.error('[server] Match manager crashed:', err);
-    process.exit(1);
+    // Don't exit on Vercel - let it restart
+    if (!process.env.VERCEL) {
+      process.exit(1);
+    }
   });
 
   // Graceful shutdown
@@ -135,6 +152,18 @@ async function main() {
     server.close();
     process.exit(0);
   });
+
+  process.on('SIGTERM', () => {
+    console.log('\n[server] SIGTERM received, shutting down...');
+    matchManager.stop();
+    server.close();
+    process.exit(0);
+  });
 }
 
-main();
+// Initialize immediately
+main().catch((err) => {
+  console.error('[server] Failed to start:', err);
+});
+
+export default app;
