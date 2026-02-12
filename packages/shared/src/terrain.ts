@@ -2,8 +2,8 @@
 // worms.arena — Terrain generation & destruction
 // ---------------------------------------------------------------------------
 
-import { MAP_WIDTH, MAP_HEIGHT, WATER_LEVEL } from './constants';
-import { SeededRNG } from './rng';
+import { MAP_WIDTH, MAP_HEIGHT, WATER_LEVEL } from './constants.js';
+import { SeededRNG } from './rng.js';
 
 /**
  * Pixel-based terrain map.

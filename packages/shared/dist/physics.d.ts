@@ -1,5 +1,5 @@
-import type { Explosion, Worm, WeaponId, Wind } from './types';
-import { Terrain } from './terrain';
+import type { Explosion, Worm, WeaponId, Wind } from './types.js';
+import { Terrain } from './terrain.js';
 export interface ProjectileResult {
     /** Position frames for animation */
     frames: Array<{

@@ -1,8 +1,8 @@
-export * from './types';
-export * from './constants';
-export * from './rng';
-export * from './terrain';
-export * from './weapons';
-export * from './physics';
-export * from './engine';
+export * from './types.js';
+export * from './constants.js';
+export * from './rng.js';
+export * from './terrain.js';
+export * from './weapons.js';
+export * from './physics.js';
+export * from './engine.js';
 //# sourceMappingURL=index.d.ts.map

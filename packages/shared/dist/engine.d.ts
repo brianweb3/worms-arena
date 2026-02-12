@@ -1,6 +1,6 @@
-import type { GameState, Worm, Team, TurnAction, TurnResult, Wind, Item, MatchStats } from './types';
-import { SeededRNG } from './rng';
-import { Terrain } from './terrain';
+import type { GameState, Worm, Team, TurnAction, TurnResult, Wind, Item, MatchStats } from './types.js';
+import { SeededRNG } from './rng.js';
+import { Terrain } from './terrain.js';
 export declare class GameEngine {
     readonly seed: number;
     readonly rng: SeededRNG;

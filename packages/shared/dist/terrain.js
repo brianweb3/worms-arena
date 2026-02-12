@@ -1,7 +1,7 @@
 // ---------------------------------------------------------------------------
 // worms.arena — Terrain generation & destruction
 // ---------------------------------------------------------------------------
-import { MAP_WIDTH, MAP_HEIGHT, WATER_LEVEL } from './constants';
+import { MAP_WIDTH, MAP_HEIGHT, WATER_LEVEL } from './constants.js';
 /**
  * Pixel-based terrain map.
  * Each byte: 0 = air, 1 = solid ground.
