@@ -1,0 +1,14 @@
+{
+  "name": "worms-arena",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev --workspace=@worms-arena/server",
+    "dev:client": "npm run dev --workspace=@worms-arena/client",
+    "build:shared": "npm run build --workspace=@worms-arena/shared",
+    "build": "npm run build:shared && npm run build --workspace=@worms-arena/server && npm run build --workspace=@worms-arena/client"
+  }
+}
