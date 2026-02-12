@@ -138,8 +138,8 @@ async function main() {
   // Start the infinite match loop (non-blocking)
   matchManager.start().catch((err) => {
     console.error('[server] Match manager crashed:', err);
-    // Don't exit on Vercel - let it restart
-    if (!process.env.VERCEL) {
+    // Don't exit on Vercel - let it restart. Railway will handle restarts automatically.
+    if (!process.env.VERCEL && !process.env.RAILWAY_ENVIRONMENT) {
       process.exit(1);
     }
   });

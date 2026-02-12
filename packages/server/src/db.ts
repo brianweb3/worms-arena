@@ -8,13 +8,16 @@ import { fileURLToPath } from 'url';
 import { PRESET_AGENTS } from './ai/agent.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-// Use /tmp for Vercel (writable) or local data directory
+// Use persistent storage: Railway provides /data, Vercel uses /tmp, local uses ./data
 const isVercel = process.env.VERCEL === '1' || process.env.VERCEL_ENV;
-const DATA_PATH = isVercel 
+const isRailway = process.env.RAILWAY_ENVIRONMENT !== undefined;
+const DATA_PATH = isVercel
   ? path.resolve('/tmp', 'worms-arena-store.json')
+  : isRailway
+  ? path.resolve('/data', 'worms-arena-store.json')
   : path.resolve(__dirname, '..', 'data', 'store.json');
 
-console.log(`[db] Using data path: ${DATA_PATH} (Vercel: ${isVercel})`);
+console.log(`[db] Using data path: ${DATA_PATH} (Vercel: ${isVercel}, Railway: ${isRailway})`);
 
 // ---- Types ----
 
