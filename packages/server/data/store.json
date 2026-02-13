@@ -7,8 +7,8 @@
       "risk_tolerance": 0.9,
       "accuracy": 0.85,
       "preferred_range": "far",
-      "elo": 1331,
-      "wins": 51,
+      "elo": 1354,
+      "wins": 53,
       "losses": 14,
       "draws": 0
     },
@@ -19,9 +19,9 @@
       "risk_tolerance": 0.3,
       "accuracy": 0.95,
       "preferred_range": "far",
-      "elo": 1337,
-      "wins": 55,
-      "losses": 17,
+      "elo": 1332,
+      "wins": 56,
+      "losses": 18,
       "draws": 0
     },
     "berserker": {
@@ -31,9 +31,9 @@
       "risk_tolerance": 1,
       "accuracy": 0.5,
       "preferred_range": "close",
-      "elo": 1065,
-      "wins": 10,
-      "losses": 39,
+      "elo": 1076,
+      "wins": 11,
+      "losses": 40,
       "draws": 0
     },
     "tactician": {
@@ -43,9 +43,9 @@
       "risk_tolerance": 0.4,
       "accuracy": 0.8,
       "preferred_range": "medium",
-      "elo": 1200,
-      "wins": 35,
-      "losses": 24,
+      "elo": 1197,
+      "wins": 36,
+      "losses": 25,
       "draws": 0
     },
     "coward": {
@@ -67,9 +67,9 @@
       "risk_tolerance": 0.5,
       "accuracy": 0.4,
       "preferred_range": "medium",
-      "elo": 1023,
-      "wins": 12,
-      "losses": 55,
+      "elo": 1033,
+      "wins": 13,
+      "losses": 57,
       "draws": 0
     },
     "predator": {
@@ -79,9 +79,9 @@
       "risk_tolerance": 0.8,
       "accuracy": 0.75,
       "preferred_range": "close",
-      "elo": 1140,
+      "elo": 1111,
       "wins": 18,
-      "losses": 19,
+      "losses": 21,
       "draws": 0
     },
     "ghost": {
@@ -103,9 +103,9 @@
       "risk_tolerance": 0.95,
       "accuracy": 0.6,
       "preferred_range": "close",
-      "elo": 1194,
+      "elo": 1163,
       "wins": 12,
-      "losses": 24,
+      "losses": 26,
       "draws": 0
     },
     "ninja": {
@@ -115,9 +115,9 @@
       "risk_tolerance": 0.6,
       "accuracy": 0.85,
       "preferred_range": "medium",
-      "elo": 1204,
-      "wins": 29,
-      "losses": 21,
+      "elo": 1199,
+      "wins": 30,
+      "losses": 22,
       "draws": 0
     },
     "veteran": {
@@ -127,9 +127,9 @@
       "risk_tolerance": 0.5,
       "accuracy": 0.88,
       "preferred_range": "medium",
-      "elo": 1291,
-      "wins": 22,
-      "losses": 9,
+      "elo": 1305,
+      "wins": 25,
+      "losses": 10,
       "draws": 0
     },
     "chaos": {
@@ -139,9 +139,9 @@
       "risk_tolerance": 0.9,
       "accuracy": 0.45,
       "preferred_range": "close",
-      "elo": 1195,
+      "elo": 1173,
       "wins": 13,
-      "losses": 16,
+      "losses": 17,
       "draws": 0
     },
     "precision": {
@@ -176,8 +176,8 @@
       "accuracy": 0.75,
       "preferred_range": "far",
       "elo": 1251,
-      "wins": 22,
-      "losses": 15,
+      "wins": 23,
+      "losses": 16,
       "draws": 0
     },
     "balanced": {
@@ -187,8 +187,8 @@
       "risk_tolerance": 0.5,
       "accuracy": 0.7,
       "preferred_range": "medium",
-      "elo": 1142,
-      "wins": 14,
+      "elo": 1179,
+      "wins": 16,
       "losses": 23,
       "draws": 0
     }
@@ -3433,6 +3433,123 @@
       "winner_agent_id": "defender",
       "turns": 110,
       "finished_at": "2026-02-13T17:21:58.327Z"
+    },
+    {
+      "id": "28868128-a0e0-43e7-8b42-bca1082ccfa5",
+      "seed": 1539957873,
+      "agent1_id": "predator",
+      "agent2_id": "terminator",
+      "winner_agent_id": "terminator",
+      "turns": 110,
+      "finished_at": "2026-02-13T17:22:44.837Z"
+    },
+    {
+      "id": "cb0b91a1-8a9f-429d-961d-d3eeb870f63b",
+      "seed": 313478408,
+      "agent1_id": "veteran",
+      "agent2_id": "random-rick",
+      "winner_agent_id": "veteran",
+      "turns": 110,
+      "finished_at": "2026-02-13T17:23:05.686Z"
+    },
+    {
+      "id": "f13ecfc1-7e3f-422f-b6a0-202484b3edbe",
+      "seed": 1393492029,
+      "agent1_id": "veteran",
+      "agent2_id": "random-rick",
+      "winner_agent_id": "veteran",
+      "turns": 110,
+      "finished_at": "2026-02-13T17:23:10.686Z"
+    },
+    {
+      "id": "db5a87a4-bcdc-487c-be91-ef5a23d206da",
+      "seed": 21326092,
+      "agent1_id": "predator",
+      "agent2_id": "random-rick",
+      "winner_agent_id": "random-rick",
+      "turns": 109,
+      "finished_at": "2026-02-13T17:23:11.673Z"
+    },
+    {
+      "id": "5f974c64-8c4a-4fe5-9796-9679bbc882cf",
+      "seed": 412259450,
+      "agent1_id": "sniper",
+      "agent2_id": "veteran",
+      "winner_agent_id": "veteran",
+      "turns": 112,
+      "finished_at": "2026-02-13T17:23:13.795Z"
+    },
+    {
+      "id": "0280783f-4ff2-4a37-b2db-d6ab1c22fe1b",
+      "seed": 1032114778,
+      "agent1_id": "ninja",
+      "agent2_id": "tactician",
+      "winner_agent_id": "tactician",
+      "turns": 114,
+      "finished_at": "2026-02-13T17:23:15.877Z"
+    },
+    {
+      "id": "cd523530-7d6d-4fb0-81fe-da43752cde01",
+      "seed": 790710714,
+      "agent1_id": "ninja",
+      "agent2_id": "berserker",
+      "winner_agent_id": "ninja",
+      "turns": 112,
+      "finished_at": "2026-02-13T17:24:45.354Z"
+    },
+    {
+      "id": "b1fd6aa6-a398-4dbe-a401-a24afd155652",
+      "seed": 79259787,
+      "agent1_id": "tank",
+      "agent2_id": "balanced",
+      "winner_agent_id": "balanced",
+      "turns": 107,
+      "finished_at": "2026-02-13T17:26:06.444Z"
+    },
+    {
+      "id": "46e7034c-6417-4e88-bfb0-032437b65d7a",
+      "seed": 71830465,
+      "agent1_id": "defender",
+      "agent2_id": "tank",
+      "winner_agent_id": "defender",
+      "turns": 110,
+      "finished_at": "2026-02-13T17:27:14.472Z"
+    },
+    {
+      "id": "84f9533b-8737-47e9-9931-1f3e6eb7608f",
+      "seed": 376409467,
+      "agent1_id": "veteran",
+      "agent2_id": "terminator",
+      "winner_agent_id": "terminator",
+      "turns": 112,
+      "finished_at": "2026-02-13T17:27:20.428Z"
+    },
+    {
+      "id": "50294a79-51ca-4ebe-be54-6730092a4800",
+      "seed": 1491147965,
+      "agent1_id": "berserker",
+      "agent2_id": "chaos",
+      "winner_agent_id": "berserker",
+      "turns": 109,
+      "finished_at": "2026-02-13T17:27:21.227Z"
+    },
+    {
+      "id": "bcaec44f-f10f-4133-ae94-68df8e2f4568",
+      "seed": 1351899589,
+      "agent1_id": "defender",
+      "agent2_id": "sniper",
+      "winner_agent_id": "sniper",
+      "turns": 110,
+      "finished_at": "2026-02-13T17:27:23.350Z"
+    },
+    {
+      "id": "a9c241e4-f2ce-4c8a-860f-62e3b55bcbc7",
+      "seed": 1510610925,
+      "agent1_id": "balanced",
+      "agent2_id": "tactician",
+      "winner_agent_id": "balanced",
+      "turns": 111,
+      "finished_at": "2026-02-13T17:27:24.375Z"
     }
   ]
 }
