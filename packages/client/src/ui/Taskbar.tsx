@@ -109,14 +109,16 @@ export default function Taskbar({ items, onItemClick, connected, matchCount, mus
         >
           COPY CA
         </button>
-        <button
+        <a
+          href="https://x.com/i/communities/2021995555740667942"
+          target="_blank"
+          rel="noopener noreferrer"
           className="button"
-          onClick={() => window.open('https://x.com/i/communities/2021995555740667942', '_blank')}
-          style={{ padding: '2px 4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
-          title="Twitter"
+          style={{ padding: '2px 4px', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}
+          title="Twitter / X Community"
         >
-          <img src="/assets/twitter-logo.svg" alt="" style={{ width: 16, height: 16, display: 'block' }} />
-        </button>
+          <img src="/assets/twitter-logo.svg" alt="Twitter" style={{ width: 16, height: 16, display: 'block' }} />
+        </a>
         <button
           className="button"
           onClick={onMusicToggle}
