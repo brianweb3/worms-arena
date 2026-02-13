@@ -289,6 +289,47 @@ export default function Desktop({ gameData }: Props) {
         backgroundColor: '#008080',
       }}
     >
+      {/* Top bar — Twitter */}
+      <div
+        style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: 28,
+          background: '#c0c0c0',
+          borderBottom: '2px solid #808080',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'flex-end',
+          padding: '0 12px',
+          gap: 8,
+          zIndex: 10000,
+        }}
+      >
+        <a
+          href="https://x.com/i/communities/2021995555740667942"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: 6,
+            padding: '4px 10px',
+            fontSize: 12,
+            fontFamily: '"MS Sans Serif", Arial, sans-serif',
+            color: '#000',
+            textDecoration: 'none',
+            background: '#c0c0c0',
+            border: '1px solid #808080',
+            boxShadow: 'inset 1px 1px 0 #fff, 1px 1px 0 #000',
+          }}
+        >
+          <img src="/assets/twitter-logo.svg" alt="" style={{ width: 16, height: 16, display: 'block' }} />
+          Twitter
+        </a>
+      </div>
+
       {/* Desktop icons */}
       <div style={{ position: 'absolute', top: 12, left: 12, zIndex: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
       </div>
