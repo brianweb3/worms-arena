@@ -100,18 +100,18 @@ export default function Taskbar({ items, onItemClick, connected, matchCount, mus
         <button
           className="button"
           onClick={() => {
-            navigator.clipboard.writeText(window.location.href).then(() => {
+            navigator.clipboard.writeText('BPDcRfdh3HeKYv7T5pWjoqY5674LvETBH25CXUiXpump').then(() => {
               // Could show a toast notification here
             }).catch(() => {});
           }}
           style={{ padding: '2px 6px', fontSize: 10 }}
-          title="Copy URL"
+          title="Copy CA"
         >
           COPY CA
         </button>
         <button
           className="button"
-          onClick={() => window.open('https://x.com', '_blank')}
+          onClick={() => window.open('https://x.com/i/communities/2021995555740667942', '_blank')}
           style={{ padding: '2px 4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
           title="Twitter"
         >
