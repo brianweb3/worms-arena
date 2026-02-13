@@ -105,6 +105,31 @@ export default function Taskbar({ items, onItemClick, connected, matchCount, mus
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
+            navigator.clipboard.writeText('BPDcRfdh3HeKYv7T5pWjoqY5674LvETBH25CXUiXpump').then(() => {
+              // Could show a toast notification here
+            }).catch(() => {});
+          }}
+          style={{ padding: '2px 6px', fontSize: 10 }}
+          title="Copy CA"
+        >
+          COPY CA
+        </button>
+        <a
+          href="https://x.com/i/communities/2021995555740667942"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="button"
+          style={{ padding: '2px 4px', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', color: 'inherit' }}
+          title="Twitter / X Community"
+        >
+          <img src="/assets/twitter-logo.svg" alt="Twitter" style={{ width: 16, height: 16, display: 'block' }} />
+        </a>
+        <button
+          type="button"
+          className="button"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
             onMusicToggle();
           }}
           style={{ padding: '0 4px', fontSize: 10 }}
