@@ -48,6 +48,7 @@ export default function Taskbar({ items, onItemClick, connected, matchCount, mus
     >
       {/* Start button */}
       <button
+        type="button"
         className="button"
         style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '2px 8px', fontSize: 11 }}
       >
@@ -67,6 +68,7 @@ export default function Taskbar({ items, onItemClick, connected, matchCount, mus
       >
         {items.map((item) => (
           <button
+            type="button"
             key={item.id}
             className="button"
             onClick={() => onItemClick(item.id)}
@@ -98,8 +100,11 @@ export default function Taskbar({ items, onItemClick, connected, matchCount, mus
         }}
       >
         <button
+          type="button"
           className="button"
-          onClick={() => {
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
             navigator.clipboard.writeText('BPDcRfdh3HeKYv7T5pWjoqY5674LvETBH25CXUiXpump').then(() => {
               // Could show a toast notification here
             }).catch(() => {});
@@ -120,8 +125,13 @@ export default function Taskbar({ items, onItemClick, connected, matchCount, mus
           <img src="/assets/twitter-logo.svg" alt="Twitter" style={{ width: 16, height: 16, display: 'block' }} />
         </a>
         <button
+          type="button"
           className="button"
-          onClick={onMusicToggle}
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            onMusicToggle();
+          }}
           style={{ padding: '0 4px', fontSize: 10 }}
           title={musicPlaying ? 'Mute music' : 'Play music'}
         >
