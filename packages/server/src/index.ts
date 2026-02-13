@@ -36,6 +36,13 @@ const clientDist = path.resolve(__dirname, '..', '..', 'client', 'dist');
 const isProduction = existsSync(clientDist);
 
 if (isProduction) {
+  // Serve index.html with no-cache so redeploys are visible immediately (no stale cache)
+  const noCacheHtml = (_req: express.Request, res: express.Response) => {
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+    res.sendFile(path.join(clientDist, 'index.html'));
+  };
+  app.get('/', noCacheHtml);
+  app.get('/index.html', noCacheHtml);
   app.use(express.static(clientDist));
 } else {
   // Proxy to Vite dev server in development (but not API/WS routes)
@@ -103,6 +110,7 @@ app.get('/api/weapon-stats', (_req, res) => {
 // SPA fallback (only in production)
 if (isProduction) {
   app.get('*', (_req, res) => {
+    res.set('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
     res.sendFile(path.join(clientDist, 'index.html'));
   });
 }
